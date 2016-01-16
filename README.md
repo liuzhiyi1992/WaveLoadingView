@@ -1,7 +1,7 @@
 # WaveLoadingView
 A loading indicator like water wave
 
-###You can play a demo with [appetize.io](https://appetize.io/app/zd8xaj9hgbayxr7harhkfyjxf0?device=iphone5s&scale=75&orientation=portrait&osVersion=9.2)
+###You can play a demo with [appetize.io](https://appetize.io/app/9upnjbk9hwjaz9hjyzuz41788c?device=iphone5s&scale=75&orientation=portrait&osVersion=9.2)
 
 
 <br>
