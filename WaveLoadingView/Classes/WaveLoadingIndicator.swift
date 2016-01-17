@@ -19,7 +19,7 @@ private var term = 60.0//周期（在代码中重新计算）
 private var phasePosition = 0.0//相位必须为0(画曲线机制局限)
 private var amplitude = 29.0//波幅
 private var position = 40.0//X轴所在的Y坐标（在代码中重新计算）
-private var originX = 0.0//X坐标起点
+
 private let waveMoveSpan = 5.0//波浪移动单位跨度
 
 private let heavyColor = UIColor(red: 38/255.0, green: 227/255.0, blue: 198/255.0, alpha: 1.0)
@@ -37,6 +37,8 @@ enum ShapeModel {
 
 
 class WaveLoadingIndicator: UIView {
+    
+    var originX = 0.0//X坐标起点
     
     
     class var amplitudeMin: Double {
@@ -72,6 +74,16 @@ class WaveLoadingIndicator: UIView {
         self.backgroundColor = UIColor.clearColor()
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        animationWave()
+        self.backgroundColor = UIColor.clearColor()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+//        fatalError("init(coder:) has not been implemented")
+    }
     
     //正弦函数公式  y = Asin(wt +_ $)
     override func drawRect(rect: CGRect) {
@@ -92,7 +104,6 @@ class WaveLoadingIndicator: UIView {
             drawProgressText()
         }
     }
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -166,13 +177,13 @@ class WaveLoadingIndicator: UIView {
     
     func animationWave() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            let tempOriginX = originX
+            let tempOriginX = self.originX
             while true {
                 NSThread.sleepForTimeInterval(0.08)
-                if originX <= tempOriginX - term {
-                    originX = tempOriginX - waveMoveSpan
+                if self.originX <= tempOriginX - term {
+                    self.originX = tempOriginX - waveMoveSpan
                 } else {
-                    originX -= waveMoveSpan
+                    self.originX -= waveMoveSpan
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.setNeedsDisplay()

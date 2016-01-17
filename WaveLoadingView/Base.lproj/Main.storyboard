@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wvh-eb-q6p">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="RTm-rc-gcM">
+            <objects>
+                <navigationController id="wvh-eb-q6p" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XGk-AG-ePk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SD0-bd-bJh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpX-gJ-Qzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-379" y="-428"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,7 +35,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-KI-0Gs" customClass="WaveLoadingIndicator" customModule="WaveLoadingView" customModuleProvider="target">
                                 <rect key="frame" x="180" y="170" width="240" height="160"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="5HF-oH-ZeM"/>
                                     <constraint firstAttribute="height" constant="160" id="Mqn-H2-bGO"/>
@@ -27,7 +42,6 @@
                             </view>
                             <slider opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="otp-Hr-22c">
                                 <rect key="frame" x="178" y="360" width="244" height="31"/>
-                                <animations/>
                                 <color key="minimumTrackTintColor" red="0.47450980392156861" green="0.97254901960784312" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="sliderBarValueDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9S7-zf-GaI"/>
@@ -35,7 +49,6 @@
                             </slider>
                             <slider opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-S0-E9F">
                                 <rect key="frame" x="178" y="410" width="244" height="31"/>
-                                <animations/>
                                 <color key="minimumTrackTintColor" red="0.47450980392156861" green="0.97254901960784312" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="sliderBarValueDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="BSi-8w-l32"/>
@@ -43,21 +56,18 @@
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwO-P3-pGr">
                                 <rect key="frame" x="180" y="345" width="50" height="14.5"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amplitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVt-lZ-6nv">
                                 <rect key="frame" x="180" y="395" width="56" height="14.5"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLd-TX-3qA">
                                 <rect key="frame" x="180" y="450" width="81" height="29"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.47450980392156861" green="0.97254901960784312" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="  IsShowTip  ">
@@ -69,7 +79,6 @@
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chF-n0-iej">
                                 <rect key="frame" x="314" y="450" width="106" height="29"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.47450980390000003" green="0.97254901959999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="  ChangeShape  ">
@@ -79,8 +88,18 @@
                                     <action selector="clickChangeShapeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dj-uR-fvb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6s-Zj-OM9">
+                                <rect key="frame" x="334" y="104" width="86" height="29"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="  Example -&gt; ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickExampleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dcw-do-WE0"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="chF-n0-iej" firstAttribute="top" secondItem="mLd-TX-3qA" secondAttribute="top" id="3Jt-rQ-9mu"/>
@@ -90,9 +109,12 @@
                             <constraint firstItem="UMn-S0-E9F" firstAttribute="width" secondItem="T0Z-KI-0Gs" secondAttribute="width" id="COc-of-IlZ"/>
                             <constraint firstItem="UMn-S0-E9F" firstAttribute="top" secondItem="bVt-lZ-6nv" secondAttribute="bottom" id="DxZ-ac-ZyI"/>
                             <constraint firstItem="mLd-TX-3qA" firstAttribute="leading" secondItem="bVt-lZ-6nv" secondAttribute="leading" id="JSe-Dr-r0V"/>
+                            <constraint firstItem="X6s-Zj-OM9" firstAttribute="trailing" secondItem="TwO-P3-pGr" secondAttribute="trailing" id="Od2-rc-Mlg"/>
                             <constraint firstItem="bVt-lZ-6nv" firstAttribute="leading" secondItem="UMn-S0-E9F" secondAttribute="leading" id="Qw8-aW-vES"/>
                             <constraint firstItem="TwO-P3-pGr" firstAttribute="leading" secondItem="otp-Hr-22c" secondAttribute="leading" id="Uq3-Gh-N06"/>
                             <constraint firstItem="otp-Hr-22c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dVV-IE-NVf"/>
+                            <constraint firstItem="X6s-Zj-OM9" firstAttribute="trailing" secondItem="otp-Hr-22c" secondAttribute="trailing" id="gMJ-8V-gF1"/>
+                            <constraint firstItem="X6s-Zj-OM9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="mcR-5I-IlN"/>
                             <constraint firstItem="otp-Hr-22c" firstAttribute="top" secondItem="T0Z-KI-0Gs" secondAttribute="bottom" constant="30" id="mds-CE-kkn"/>
                             <constraint firstItem="chF-n0-iej" firstAttribute="trailing" secondItem="UMn-S0-E9F" secondAttribute="trailing" id="nCr-Gu-eHy"/>
                             <constraint firstItem="T0Z-KI-0Gs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="ruA-WX-c6q"/>
@@ -100,10 +122,17 @@
                             <constraint firstItem="otp-Hr-22c" firstAttribute="width" secondItem="T0Z-KI-0Gs" secondAttribute="width" id="uO6-FI-d4C"/>
                             <constraint firstItem="otp-Hr-22c" firstAttribute="top" secondItem="TwO-P3-pGr" secondAttribute="bottom" id="uSO-IU-zbh"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Od2-rc-Mlg"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="CHI-tG-F0r"/>
                     <connections>
                         <outlet property="amplitudeSliderBar" destination="UMn-S0-E9F" id="REd-yA-RrG"/>
                         <outlet property="changeShapeButton" destination="chF-n0-iej" id="sLX-A0-6Wt"/>
+                        <outlet property="exampleButton" destination="X6s-Zj-OM9" id="ZhD-Yt-MXU"/>
                         <outlet property="isShowTipButton" destination="mLd-TX-3qA" id="9sj-PX-Xj0"/>
                         <outlet property="progressSliderBar" destination="otp-Hr-22c" id="xLD-NI-K9i"/>
                         <outlet property="waveLoadingIndicator" destination="T0Z-KI-0Gs" id="xo0-WN-wrd"/>
@@ -111,6 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="285" y="-264"/>
         </scene>
     </scenes>
 </document>

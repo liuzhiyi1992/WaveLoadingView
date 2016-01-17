@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var isShowTipButton: UIButton!
     @IBOutlet weak var changeShapeButton: UIButton!
+    @IBOutlet weak var exampleButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -25,8 +26,13 @@ class ViewController: UIViewController {
         waveLoadingIndicator.isShowProgressText = false
         isShowTipButton.layer.cornerRadius = isShowTipButton.bounds.size.height/2
         isShowTipButton.layer.masksToBounds = true
-        changeShapeButton.layer.cornerRadius = isShowTipButton.bounds.size.height/2
-        isShowTipButton.layer.masksToBounds = true
+        changeShapeButton.layer.cornerRadius = changeShapeButton.bounds.size.height/2
+        changeShapeButton.layer.masksToBounds = true
+        exampleButton.layer.cornerRadius = exampleButton.bounds.size.height/2
+        exampleButton.layer.masksToBounds = true
+        
+        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.shadowImage = UIImage(named: "shadow")
     }
     
 
@@ -45,6 +51,12 @@ class ViewController: UIViewController {
             waveLoadingIndicator.waveAmplitude = WaveLoadingIndicator.amplitudeMin + Double(amplitudeSliderBar.value) * WaveLoadingIndicator.amplitudeSpan
         }
     }
+    
+    @IBAction func clickExampleButton(sender: AnyObject) {
+        let exampleController = DisplayViewController()
+        self.navigationController?.pushViewController(exampleController, animated: true)
+    }
+    
     
     func setWaveValue(value: AnyObject) {
         waveLoadingIndicator.progress = value.doubleValue
