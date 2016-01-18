@@ -62,9 +62,7 @@ self.displayImageView.sd_setImageWithURL(url, placeholderImage: nil, options: .C
 ```
 > <br>
 > Don't worry， after -removeFromSuperview(), the animation have been stop
-> <br>
->  
 
 <br>
 #**License：** 
-ZYKeyboardUtil is available under the MIT license. See the LICENSE file for more info.
+WaveLoadingIndicator is available under the MIT license. See the LICENSE file for more info.
