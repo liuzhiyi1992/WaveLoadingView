@@ -63,6 +63,7 @@ self.displayImageView.sd_setImageWithURL(url, placeholderImage: nil, options: .C
 > <br>
 > Don't worry， after -removeFromSuperview(), the animation have been stop
 > <br>
+>  
 
 <br>
 #**License：** 
