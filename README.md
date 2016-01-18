@@ -11,7 +11,7 @@ A loading indicator like water wave
 
 ![](https://raw.githubusercontent.com/liuzhiyi1992/WaveLoadingView/master/WaveLoadingView/2016-01-17%2017_36_30.gif)
 
-
+<br>
 #**Property：**
 · cycle —— 循环次数，在控件宽度范围内，该正弦函数图形循环的次数，数值越大控件范围内看见的正弦函数图形周期数越多，波长约短波浪也越陡。  
 · term —— 正弦周期，在layoutSubviews中根据cycle重新计算，==修改无效==  
@@ -27,7 +27,7 @@ A loading indicator like water wave
 · progressTextFontSize —— 中央进度提示百分比字号大小
 
 
-
+<br>
 #**Usage：**
 1. include the file WaveLoadingView.swift to your project, and about objectiveC, you can create a bridge Header and import it
 2. creat a waveLoadingIndicator instance
@@ -60,7 +60,7 @@ self.displayImageView.sd_setImageWithURL(url, placeholderImage: nil, options: .C
         weakSelf.waveLoadingIndicator.removeFromSuperview()
 }
 ```
-!!! Don't worry， after -removeFromSuperview(), the animation have been stop
+> Don't worry， after -removeFromSuperview(), the animation have been stop
 
 
 
