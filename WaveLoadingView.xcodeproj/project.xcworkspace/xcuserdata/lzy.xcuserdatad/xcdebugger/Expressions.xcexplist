@@ -6,6 +6,7 @@
          contextName = "WaveLoadingIndicator.(animationWave(WaveLoadingIndicator) -&gt; () -&gt; ()).(closure #1):WaveLoadingIndicator.swift">
          <PersistentStrings>
             <PersistentString
+               value = "self.waving">
             </PersistentString>
             <PersistentString
                value = "waving">
