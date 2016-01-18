@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "WaveLoadingIndicator.(animationWave(WaveLoadingIndicator) -&gt; () -&gt; ()).(closure #1):WaveLoadingIndicator.swift">
+         <PersistentStrings>
+            <PersistentString
+            </PersistentString>
+            <PersistentString
+               value = "waving">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WaveLoadingIndicator.removeFromSuperview() -&gt; ():WaveLoadingIndicator.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "waving">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

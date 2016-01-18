@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var waveLoadingIndicator: WaveLoadingIndicator!
     @IBOutlet weak var progressSliderBar: UISlider!
     @IBOutlet weak var amplitudeSliderBar: UISlider!
+    @IBOutlet weak var borderWidthSliderBar: UISlider!
     
     @IBOutlet weak var isShowTipButton: UIButton!
     @IBOutlet weak var changeShapeButton: UIButton!
@@ -23,13 +24,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        radiusButton()
+        
         waveLoadingIndicator.isShowProgressText = false
-        isShowTipButton.layer.cornerRadius = isShowTipButton.bounds.size.height/2
-        isShowTipButton.layer.masksToBounds = true
-        changeShapeButton.layer.cornerRadius = changeShapeButton.bounds.size.height/2
-        changeShapeButton.layer.masksToBounds = true
-        exampleButton.layer.cornerRadius = exampleButton.bounds.size.height/2
-        exampleButton.layer.masksToBounds = true
         
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.shadowImage = UIImage(named: "shadow")
@@ -49,6 +46,8 @@ class ViewController: UIViewController {
             self.performSelector("setWaveValue:", withObject: progressSliderBar.value, afterDelay: 0.3)
         } else if sender.tag == 11 {
             waveLoadingIndicator.waveAmplitude = WaveLoadingIndicator.amplitudeMin + Double(amplitudeSliderBar.value) * WaveLoadingIndicator.amplitudeSpan
+        } else if sender.tag == 12 {
+            waveLoadingIndicator.borderWidth = CGFloat(1) + CGFloat(3 * borderWidthSliderBar.value)
         }
     }
     
@@ -60,6 +59,16 @@ class ViewController: UIViewController {
     
     func setWaveValue(value: AnyObject) {
         waveLoadingIndicator.progress = value.doubleValue
+    }
+    
+    func radiusButton() {
+        isShowTipButton.layer.cornerRadius = isShowTipButton.bounds.size.height/2
+        isShowTipButton.layer.masksToBounds = true
+        changeShapeButton.layer.cornerRadius = changeShapeButton.bounds.size.height/2
+        changeShapeButton.layer.masksToBounds = true
+        exampleButton.layer.cornerRadius = exampleButton.bounds.size.height/2
+        exampleButton.layer.masksToBounds = true
+
     }
     
     override func didReceiveMemoryWarning() {

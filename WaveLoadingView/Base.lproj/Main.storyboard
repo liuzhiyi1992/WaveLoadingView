@@ -54,6 +54,13 @@
                                     <action selector="sliderBarValueDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="BSi-8w-l32"/>
                                 </connections>
                             </slider>
+                            <slider opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HBE-jp-lOz">
+                                <rect key="frame" x="178" y="460" width="244" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.47450980392156861" green="0.97254901960784312" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderBarValueDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="8N9-Np-tvh"/>
+                                </connections>
+                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwO-P3-pGr">
                                 <rect key="frame" x="180" y="345" width="50" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -67,7 +74,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLd-TX-3qA">
-                                <rect key="frame" x="180" y="450" width="81" height="29"/>
+                                <rect key="frame" x="180" y="500" width="81" height="29"/>
                                 <color key="backgroundColor" red="0.47450980392156861" green="0.97254901960784312" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="  IsShowTip  ">
@@ -77,8 +84,8 @@
                                     <action selector="clickIsShowTipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BUn-pL-LE1"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chF-n0-iej">
-                                <rect key="frame" x="314" y="450" width="106" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chF-n0-iej">
+                                <rect key="frame" x="314" y="500" width="106" height="29"/>
                                 <color key="backgroundColor" red="0.47450980390000003" green="0.97254901959999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="  ChangeShape  ">
@@ -99,38 +106,54 @@
                                     <action selector="clickExampleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dcw-do-WE0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="borderWidth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BF-0a-zsK">
+                                <rect key="frame" x="180" y="445.5" width="71.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="chF-n0-iej" firstAttribute="top" secondItem="mLd-TX-3qA" secondAttribute="top" id="3Jt-rQ-9mu"/>
                             <constraint firstItem="UMn-S0-E9F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Q5-hD-vZp"/>
                             <constraint firstItem="T0Z-KI-0Gs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5La-al-FYG"/>
+                            <constraint firstItem="HBE-jp-lOz" firstAttribute="top" secondItem="2BF-0a-zsK" secondAttribute="bottom" id="6fT-8g-pz1"/>
+                            <constraint firstItem="HBE-jp-lOz" firstAttribute="width" secondItem="T0Z-KI-0Gs" secondAttribute="width" id="6gO-W6-NlH"/>
                             <constraint firstItem="UMn-S0-E9F" firstAttribute="top" secondItem="otp-Hr-22c" secondAttribute="bottom" constant="20" id="9PM-1P-Hmp"/>
                             <constraint firstItem="UMn-S0-E9F" firstAttribute="width" secondItem="T0Z-KI-0Gs" secondAttribute="width" id="COc-of-IlZ"/>
+                            <constraint firstItem="HBE-jp-lOz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DLU-S6-juo"/>
                             <constraint firstItem="UMn-S0-E9F" firstAttribute="top" secondItem="bVt-lZ-6nv" secondAttribute="bottom" id="DxZ-ac-ZyI"/>
+                            <constraint firstItem="HBE-jp-lOz" firstAttribute="top" secondItem="UMn-S0-E9F" secondAttribute="bottom" constant="20" id="Ik6-Ie-umS"/>
                             <constraint firstItem="mLd-TX-3qA" firstAttribute="leading" secondItem="bVt-lZ-6nv" secondAttribute="leading" id="JSe-Dr-r0V"/>
                             <constraint firstItem="X6s-Zj-OM9" firstAttribute="trailing" secondItem="TwO-P3-pGr" secondAttribute="trailing" id="Od2-rc-Mlg"/>
                             <constraint firstItem="bVt-lZ-6nv" firstAttribute="leading" secondItem="UMn-S0-E9F" secondAttribute="leading" id="Qw8-aW-vES"/>
                             <constraint firstItem="TwO-P3-pGr" firstAttribute="leading" secondItem="otp-Hr-22c" secondAttribute="leading" id="Uq3-Gh-N06"/>
+                            <constraint firstItem="2BF-0a-zsK" firstAttribute="leading" secondItem="bVt-lZ-6nv" secondAttribute="leading" id="WZI-Gf-cFL"/>
                             <constraint firstItem="otp-Hr-22c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dVV-IE-NVf"/>
                             <constraint firstItem="X6s-Zj-OM9" firstAttribute="trailing" secondItem="otp-Hr-22c" secondAttribute="trailing" id="gMJ-8V-gF1"/>
+                            <constraint firstItem="mLd-TX-3qA" firstAttribute="top" secondItem="HBE-jp-lOz" secondAttribute="bottom" constant="10" id="hqb-6L-yfR"/>
                             <constraint firstItem="X6s-Zj-OM9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="mcR-5I-IlN"/>
                             <constraint firstItem="otp-Hr-22c" firstAttribute="top" secondItem="T0Z-KI-0Gs" secondAttribute="bottom" constant="30" id="mds-CE-kkn"/>
                             <constraint firstItem="chF-n0-iej" firstAttribute="trailing" secondItem="UMn-S0-E9F" secondAttribute="trailing" id="nCr-Gu-eHy"/>
                             <constraint firstItem="T0Z-KI-0Gs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="ruA-WX-c6q"/>
                             <constraint firstItem="mLd-TX-3qA" firstAttribute="top" secondItem="UMn-S0-E9F" secondAttribute="bottom" constant="10" id="ske-el-ix2"/>
+                            <constraint firstItem="HBE-jp-lOz" firstAttribute="top" secondItem="UMn-S0-E9F" secondAttribute="bottom" constant="20" id="tkA-bq-fqb"/>
                             <constraint firstItem="otp-Hr-22c" firstAttribute="width" secondItem="T0Z-KI-0Gs" secondAttribute="width" id="uO6-FI-d4C"/>
                             <constraint firstItem="otp-Hr-22c" firstAttribute="top" secondItem="TwO-P3-pGr" secondAttribute="bottom" id="uSO-IU-zbh"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Od2-rc-Mlg"/>
+                                <exclude reference="Ik6-Ie-umS"/>
+                                <exclude reference="ske-el-ix2"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="CHI-tG-F0r"/>
                     <connections>
                         <outlet property="amplitudeSliderBar" destination="UMn-S0-E9F" id="REd-yA-RrG"/>
+                        <outlet property="borderWidthSliderBar" destination="HBE-jp-lOz" id="EgR-tZ-ojA"/>
                         <outlet property="changeShapeButton" destination="chF-n0-iej" id="sLX-A0-6Wt"/>
                         <outlet property="exampleButton" destination="X6s-Zj-OM9" id="ZhD-Yt-MXU"/>
                         <outlet property="isShowTipButton" destination="mLd-TX-3qA" id="9sj-PX-Xj0"/>
