@@ -31,6 +31,7 @@ class WaveLoadingIndicator: UIView {
     private var position = 40.0//X轴所在的Y坐标（在代码中重新计算）, where the x axis of wave position
     
     private let waveMoveSpan = 5.0//波浪移动单位跨度, the span wave move in a unit time
+    private let animationUnitTime = 0.08//重画单位时间, redraw unit time
     
     private let heavyColor = UIColor(red: 38/255.0, green: 227/255.0, blue: 198/255.0, alpha: 1.0)
     private let lightColor = UIColor(red: 121/255.0, green: 248/255.0, blue: 221/255.0, alpha: 1.0)
@@ -198,7 +199,7 @@ class WaveLoadingIndicator: UIView {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         self!.setNeedsDisplay()
                     })
-                    NSThread.sleepForTimeInterval(0.08)
+                    NSThread.sleepForTimeInterval(self!.animationUnitTime)
                 }
             }
         }
@@ -231,3 +232,6 @@ class WaveLoadingIndicator: UIView {
     
     
 }
+
+// 版权属于原作者
+// 个人博客 zyden.vicp.cc

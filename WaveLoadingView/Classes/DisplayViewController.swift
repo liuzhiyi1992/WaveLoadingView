@@ -27,14 +27,10 @@ class DisplayViewController: UIViewController {
         self.displayImageView.addSubview(self.waveLoadingIndicator!)
         self.waveLoadingIndicator!.frame = self.displayImageView.bounds
         self.waveLoadingIndicator!.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        
         self.displayImageView.sd_setImageWithURL(url, placeholderImage: nil, options: .CacheMemoryOnly, progress: {
             [weak self](receivedSize, expectedSize) -> Void in
             
-            guard let weakSelf = self else {
-                return
-            }
-            guard let nonNilIndicator = weakSelf.waveLoadingIndicator else {
+            guard let weakSelf = self, let nonNilIndicator = weakSelf.waveLoadingIndicator else {
                 return
             }
             
@@ -42,10 +38,7 @@ class DisplayViewController: UIViewController {
         }) {
             [weak self](image, error, _, _) -> Void in
             
-            guard let weakSelf = self else {
-                return
-            }
-            guard let nonNilIndicator = weakSelf.waveLoadingIndicator else {
+            guard let weakSelf = self, let nonNilIndicator = weakSelf.waveLoadingIndicator else {
                 return
             }
             
@@ -60,3 +53,7 @@ class DisplayViewController: UIViewController {
     }
 
 }
+
+// 版权属于原作者
+// 个人博客 zyden.vicp.cc
+
