@@ -29,13 +29,27 @@ class DisplayViewController: UIViewController {
         self.waveLoadingIndicator!.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
         self.displayImageView.sd_setImageWithURL(url, placeholderImage: nil, options: .CacheMemoryOnly, progress: {
-            [unowned self](receivedSize, expectedSize) -> Void in
-            if self.waveLoadingIndicator != nil {
-                self.waveLoadingIndicator!.progress = Double(CGFloat(receivedSize)/CGFloat(expectedSize))
+            [weak self](receivedSize, expectedSize) -> Void in
+            
+            guard let weakSelf = self else {
+                return
             }
+            guard let nonNilIndicator = weakSelf.waveLoadingIndicator else {
+                return
+            }
+            
+            nonNilIndicator.progress = Double(CGFloat(receivedSize)/CGFloat(expectedSize))
         }) {
-            [unowned self](image, error, _, _) -> Void in
-            self.waveLoadingIndicator?.removeFromSuperview()
+            [weak self](image, error, _, _) -> Void in
+            
+            guard let weakSelf = self else {
+                return
+            }
+            guard let nonNilIndicator = weakSelf.waveLoadingIndicator else {
+                return
+            }
+            
+            nonNilIndicator.removeFromSuperview()
         }
     }
     

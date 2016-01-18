@@ -39,8 +39,6 @@ class WaveLoadingIndicator: UIView {
     private var clipCircleLineWidth: CGFloat = 1
     
     private let progressTextFontSize: CGFloat = 15.0
-
-    static private var waving: Bool = true
     
     
     class var amplitudeMin: Double {
@@ -96,7 +94,6 @@ class WaveLoadingIndicator: UIView {
     }
     
     deinit {
-        WaveLoadingIndicator.waving = false
     }
     
     override func drawRect(rect: CGRect) {
@@ -124,10 +121,6 @@ class WaveLoadingIndicator: UIView {
         term =  Double(self.bounds.size.width) / cycle
     }
 
-    override func removeFromSuperview() {
-        super.removeFromSuperview()
-        WaveLoadingIndicator.waving = false
-    }
     
     func clipWithCircle() {
         let circleRectWidth = min(self.bounds.size.width, self.bounds.size.height) - 2 * clipCircleLineWidth
@@ -193,18 +186,20 @@ class WaveLoadingIndicator: UIView {
     
     
     func animationWave() {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            let tempOriginX = self.originX
-            while WaveLoadingIndicator.waving {
-                NSThread.sleepForTimeInterval(0.08)
-                if self.originX <= tempOriginX - self.term {
-                    self.originX = tempOriginX - self.waveMoveSpan
-                } else {
-                    self.originX -= self.waveMoveSpan
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { [weak self]() -> Void in
+            if self != nil {
+                let tempOriginX = self!.originX
+                while self != nil {
+                    if self!.originX <= tempOriginX - self!.term {
+                        self!.originX = tempOriginX - self!.waveMoveSpan
+                    } else {
+                        self!.originX -= self!.waveMoveSpan
+                    }
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self!.setNeedsDisplay()
+                    })
+                    NSThread.sleepForTimeInterval(0.08)
                 }
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.setNeedsDisplay()
-                })
             }
         }
     }
