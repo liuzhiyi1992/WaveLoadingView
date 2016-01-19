@@ -11,6 +11,8 @@ A loading indicator like water wave
 
 ![](https://raw.githubusercontent.com/liuzhiyi1992/WaveLoadingView/master/WaveLoadingView/2016-01-17%2017_36_30.gif)
 
+![](https://raw.githubusercontent.com/liuzhiyi1992/WaveLoadingView/master/WaveLoadingView/2016-01-19%2010_26_10.gif)
+
 <br>
 #**Property：**
 · cycle —— 循环次数，在控件宽度范围内，该正弦函数图形循环的次数，数值越大控件范围内看见的正弦函数图形周期数越多，波长约短波浪也越陡。  
