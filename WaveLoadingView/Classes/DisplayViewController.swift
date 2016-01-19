@@ -11,7 +11,7 @@ import UIKit
 class DisplayViewController: UIViewController {
 
     @IBOutlet weak var displayImageView: UIImageView!
-    let waveLoadingIndicator: WaveLoadingIndicator? = WaveLoadingIndicator(frame: CGRectZero)
+    let waveLoadingIndicator: WaveLoadingIndicator = WaveLoadingIndicator(frame: CGRectZero)
     
 //    let url = NSURL(string: "http://www.quyundong.com/uploads/1080_1920.jpg")
     let url = NSURL(string: "https://raw.githubusercontent.com/liuzhiyi1992/MyStore/master/DSC_0865.JPG")
@@ -24,25 +24,25 @@ class DisplayViewController: UIViewController {
     
     
     func configure() {
-        self.displayImageView.addSubview(self.waveLoadingIndicator!)
-        self.waveLoadingIndicator!.frame = self.displayImageView.bounds
-        self.waveLoadingIndicator!.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.displayImageView.addSubview(self.waveLoadingIndicator)
+        self.waveLoadingIndicator.frame = self.displayImageView.bounds
+        self.waveLoadingIndicator.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.displayImageView.sd_setImageWithURL(url, placeholderImage: nil, options: .CacheMemoryOnly, progress: {
             [weak self](receivedSize, expectedSize) -> Void in
             
-            guard let weakSelf = self, let nonNilIndicator = weakSelf.waveLoadingIndicator else {
+            guard let weakSelf = self else {
                 return
             }
             
-            nonNilIndicator.progress = Double(CGFloat(receivedSize)/CGFloat(expectedSize))
+            weakSelf.waveLoadingIndicator.progress = Double(CGFloat(receivedSize)/CGFloat(expectedSize))
         }) {
             [weak self](image, error, _, _) -> Void in
             
-            guard let weakSelf = self, let nonNilIndicator = weakSelf.waveLoadingIndicator else {
+            guard let weakSelf = self else {
                 return
             }
             
-            nonNilIndicator.removeFromSuperview()
+            weakSelf.waveLoadingIndicator.removeFromSuperview()
         }
     }
     

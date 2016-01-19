@@ -41,6 +41,8 @@ class WaveLoadingIndicator: UIView {
     
     private let progressTextFontSize: CGFloat = 15.0
     
+    private var waving: Bool = true
+    
     
     class var amplitudeMin: Double {
         get { return amplitude_min }
@@ -122,6 +124,10 @@ class WaveLoadingIndicator: UIView {
         term =  Double(self.bounds.size.width) / cycle
     }
 
+    override func removeFromSuperview() {
+        super.removeFromSuperview()
+        waving = false
+    }
     
     func clipWithCircle() {
         let circleRectWidth = min(self.bounds.size.width, self.bounds.size.height) - 2 * clipCircleLineWidth
@@ -190,7 +196,7 @@ class WaveLoadingIndicator: UIView {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { [weak self]() -> Void in
             if self != nil {
                 let tempOriginX = self!.originX
-                while self != nil {
+                while self != nil && self!.waving {
                     if self!.originX <= tempOriginX - self!.term {
                         self!.originX = tempOriginX - self!.waveMoveSpan
                     } else {
