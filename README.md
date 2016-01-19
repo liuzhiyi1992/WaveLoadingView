@@ -7,10 +7,6 @@ A loading indicator like water wave
 <br>
 #**Features：**
 
-![Alt Text](https://raw.githubusercontent.com/liuzhiyi1992/WaveLoadingView/master/WaveLoadingView/2016-01-19%2000_30_06.gif)
-
-![](https://raw.githubusercontent.com/liuzhiyi1992/WaveLoadingView/master/WaveLoadingView/2016-01-17%2017_36_30.gif)
-
 ![](https://raw.githubusercontent.com/liuzhiyi1992/WaveLoadingView/master/WaveLoadingView/2016-01-19%2010_26_10.gif)
 
 <br>
