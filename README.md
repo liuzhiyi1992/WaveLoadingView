@@ -29,17 +29,17 @@ A loading indicator like water wave
 #**Usage：**
 1. include the file WaveLoadingView.swift to your project, and about objectiveC, you can create a bridge Header and import it
 2. creat a waveLoadingIndicator instance
-```
+```swift
 let waveLoadingIndicator: WaveLoadingIndicator = WaveLoadingIndicator(frame: CGRectZero)
 ```
 3. add waveLoadingIndicator to your imageView, equal bounds here i do , and FlexibleWidth,height
-```
+```swift
 self.displayImageView.addSubview(self.waveLoadingIndicator)  
 self.waveLoadingIndicator.frame = self.displayImageView.bounds  
 self.waveLoadingIndicator.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
 ```
 4. and your can used combine with SDWebImage:
-```
+```swift
 self.displayImageView.sd_setImageWithURL(url, placeholderImage: nil, options: .CacheMemoryOnly, progress: {
     [weak self](receivedSize, expectedSize) -> Void in
     
