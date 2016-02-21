@@ -62,7 +62,7 @@ self.displayImageView.sd_setImageWithURL(url, placeholderImage: nil, options: .C
 > Don't worry， after -removeFromSuperview(), the animation have been stop
   
 ##Relation  
-[@liuzhiyi1992](https://github.com/liuzhiyi1992) on Github
+[@liuzhiyi1992](https://github.com/liuzhiyi1992) on Github  
 [WaveLoadingIndicator](http://zyden.vicp.cc/waveloadingindicator/) in my Blog  
 
 
